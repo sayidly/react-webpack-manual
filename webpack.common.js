@@ -7,7 +7,6 @@ module.exports = {
   entry: path.join(__dirname, "./src/index.js"), // 入口文件
   output: {
     path: path.join(__dirname, "/dist"), // 打包后的文件存放的地方 
-    publicPath: "/dist/",
     filename: "bundle.js" // 打包后输出文件的文件名
   },
   module: {
