@@ -10,7 +10,8 @@ module.exports = {
   entry: path.join(__dirname, "./src/index.js"), // 入口文件
   output: {
     path: path.join(__dirname, "/dist"), // 打包后的文件存放的地方
-    filename: "bundle.js" // 打包后输出文件的文件名
+    filename: "bundle.js", // 打包后输出文件的文件名
+    chunkFilename: devMode ? '[id].js' : '[id].[hash].js'
   },
   module: {
     rules: [
@@ -21,7 +22,14 @@ module.exports = {
         options: { presets: ["@babel/env"] }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.css$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.(sa|sc)ss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
@@ -45,7 +53,14 @@ module.exports = {
       }
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  stats: {
+    // One of the two if I remember right
+    entrypoints: false,
+    children: false
+  },
+  resolve: {
+    extensions: ["*", ".js", ".jsx"]
+  },
   plugins: [
     new webpack.BannerPlugin('版权所有，翻版必究'),  // new一个插件的实例
     new HtmlWebpackPlugin({
