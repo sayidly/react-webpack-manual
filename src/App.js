@@ -1,7 +1,8 @@
 import {hot} from "react-hot-loader";
 import React, { Component} from "react";
-import Table from './Table'
-import Form from './Form'
+import Table from './Table';
+import Form from './Form';
+import './App.scss';
 
 class App extends Component {
   state = {
