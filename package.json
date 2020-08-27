@@ -46,6 +46,7 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21"
+    "react-hot-loader": "^4.12.21",
+    "@hot-loader/react-dom": "^16.8.6"
   }
 }

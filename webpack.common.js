@@ -59,7 +59,10 @@ module.exports = {
     children: false
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ["*", ".js", ".jsx"],
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
   plugins: [
     new webpack.BannerPlugin('版权所有，翻版必究'),  // new一个插件的实例
