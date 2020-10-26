@@ -1,7 +1,7 @@
 import {hot} from "react-hot-loader/root";
 import React, { Component} from "react";
-import Table from './Table';
-import Form from './Form';
+import Table from './components/Table';
+import Form from './components/Form';
 import './App.scss';
 
 class App extends Component {
