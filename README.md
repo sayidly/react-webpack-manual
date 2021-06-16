@@ -1,6 +1,6 @@
 # React APP from Scratch
 
-Use node version with `v14.16.1`
+Use node version with `v16.1.0`
 
 ## Project setup
 
