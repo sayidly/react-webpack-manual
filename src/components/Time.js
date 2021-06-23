@@ -11,7 +11,6 @@ function Time() {
 
   useEffect(() => {
     const timeout = setTimeout(() => setVarB(varB + 2), 2000);
-
     return () => clearTimeout(timeout);
   }, [varB]);
 
