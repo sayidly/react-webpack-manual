@@ -2,6 +2,7 @@ import {hot} from "react-hot-loader/root";
 import React, { Component} from "react";
 import Table from './components/Table';
 import Form from './components/Form';
+import Time from './components/Time';
 import './App.scss';
 
 class App extends Component {
@@ -28,7 +29,8 @@ class App extends Component {
 
     return(
       <div className="App">
-        <h1> Hello, World!</h1>
+        <h1>Hello, World!</h1>
+        <h2><Time /></h2>
         <Table characterData={characters} removeCharacter={this.removeCharacter} />
         <Form handleSubmit={this.handleSubmit} />
       </div>
